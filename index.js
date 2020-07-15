@@ -100,7 +100,7 @@ new (function () {
       $(
         '<div><div class="panel panel--default grid-stack-item-content"><header class="panel__header"><h4 data-id="RandomChart' +
           divId +
-          '">Random Chart ' +
+          '">Chart ' +
           divId +
           '</h4></header><div class="panel__content"><canvas id="myChart_' +
           divId +
