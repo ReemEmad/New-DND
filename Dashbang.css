@@ -207,6 +207,7 @@ body {
 .panel {
   display: flex;
   flex-direction: column;
+  border: 1px dashed black;
 }
 
 .panel__content {

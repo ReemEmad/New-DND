@@ -66,7 +66,7 @@ new (function () {
     };
     var divId = Math.ceil(Math.random() * 3);
     // var divId = Math.random();
-    console.log(divId);
+    // console.log(divId);
     this.grid.addWidget(
       $(
         '<div><div class="panel panel--default grid-stack-item-content"><header class="panel__header"><h4 data-id="RandomChart' +
