@@ -17,7 +17,7 @@ body {
   display: flex;
   flex: 1;
   flex-direction: row;
-  background-color: lawngreen;
+  background-color: rgb(255, 255, 255);
   min-height: 100%;
   /* width: 100%; */
 }
@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-basis: 15%;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
 }
 /* .my-container__left > div {
   padding: 20px;
@@ -35,30 +35,31 @@ body {
   opacity: 0.8;
   filter: blur(5px);
 }
-
+/* 
 #trash {
   background: rgba(9, 13, 221, 0.192);
-}
+} */
 .my-container__right {
+  padding: 20px;
   display: flex;
   flex-basis: 85%;
   flex-direction: column;
-  background-color: rgb(245, 14, 14);
+  background-color: #ecf0f1;
 }
 .grid {
   flex: 1;
 }
 .management {
   width: 100%;
-  background-color: rgb(5, 236, 55);
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
-.management a {
+/* .management a {
   margin: auto;
   text-align: center;
-}
+} */
 .widgets {
-  height: 80%;
-  background-color: rgb(89, 72, 243);
+  padding: 20px;
 }
 .management_btn {
   margin: 10px 0;
@@ -68,7 +69,6 @@ body {
   border-radius: 5px;
   font-weight: bold;
   font-size: 15px;
-  width: 225px;
   padding: 10px 15px;
 }
 
@@ -82,17 +82,20 @@ body {
 }
 
 .grid-stack {
-  background: rgb(5, 4, 4);
+  background: #a5b5b6;
   width: 100%;
   height: 100%;
 }
 
 .grid-stack-item-content {
+  margin-bottom: 5px;
   color: #2c3e50;
   text-align: center;
-  background-color: #18bc9c;
 }
-
+.card-body {
+  width: 300px;
+  height: 200px;
+}
 /* --------------------------------------------- */
 
 .panel {
@@ -209,4 +212,15 @@ body {
 .panel__content {
   flex: 1;
   min-height: 0;
+}
+.btn-default {
+  background-color: #17bbb0;
+  padding: 10px 20px;
+  color: white;
+}
+.btn:hover,
+.btn:focus {
+  color: #333;
+  text-decoration: none;
+  background-color: #afafaf;
 }

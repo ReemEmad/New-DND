@@ -29,73 +29,9 @@
 // var theDiv = document.getElementsByClassName("grid-stack-item");
 
 // ----------------------------------------------------------
-var ctx = document.getElementById("myChart_1");
-var ctx1 = document.getElementById("myChart_12");
-var ctx2 = document.getElementById("myChart_123");
-
-// chart1;
-var myChart = new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {},
-});
 
 // chart2;
-var myChart = new Chart(ctx1, {
-  type: "pie",
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {},
-});
+
 // chart3
 var myChart = new Chart(ctx2, {
   type: "doughnut",
@@ -150,7 +86,6 @@ new (function () {
   this.items = [{ x: 0, y: 0, width: 3, height: 4 }];
 
   this.grid = $(".grid-stack").data("gridstack");
-
   this.addNewWidget = function () {
     var node = this.items.pop() || {
       x: 3,
@@ -158,7 +93,9 @@ new (function () {
       width: 3,
       height: 4,
     };
-    var divId = Math.random();
+    var divId = Math.ceil(Math.random() * 3);
+    // var divId = Math.random();
+    console.log(divId);
     this.grid.addWidget(
       $(
         '<div><div class="panel panel--default grid-stack-item-content"><header class="panel__header"><h4 data-id="RandomChart' +
@@ -174,53 +111,138 @@ new (function () {
       node.width,
       node.height
     );
-    var ctx = document.getElementById("myChart_" + divId);
-    var myChart = new Chart(ctx, {
-      type: "doughnut",
-      data: {
-        datasets: [
-          {
-            data: [7, 1, 92],
-            backgroundColor: [
-              "rgb(255, 69, 96)",
-              "rgba(0, 0, 0, 0.6)",
-              "rgb(206, 148, 73)",
-            ],
-            borderWidth: 0,
-            hoverBackgroundColor: [
-              "rgb(255, 69, 96)",
-              "rgba(0, 0, 0, 0.6)",
-              "rgb(206, 148, 73)",
-            ],
-            hoverBorderWidth: 0,
-          },
-          {
-            data: [7, 1, 92],
-            backgroundColor: ["#FFFFFF", "rgba(0, 0, 0, 0.6)", "#FFFFFF"],
-            borderWidth: 0,
-            hoverBackgroundColor: ["#FFFFFF", "rgba(0, 0, 0, 0.6)", "#FFFFFF"],
-            hoverBorderWidth: 0,
-          },
-        ],
-      },
-      options: {
-        rotation: -3.1415926535898,
-        circumference: 3.1415926535898,
-        legend: {
-          display: false,
+    if (divId === 1) {
+      var ctx11 = document.getElementById("myChart_" + divId);
+
+      var myChart = new Chart(ctx11, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
         },
-        tooltips: {
-          enabled: false,
+        options: {},
+      });
+    } else if (divId === 2) {
+      var ctx12 = document.getElementById("myChart_" + divId);
+      var myChart = new Chart(ctx12, {
+        type: "pie",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
         },
-        title: {
-          display: true,
-          text: 4,
-          position: "bottom",
+        options: {},
+      });
+    } else {
+      var ctx13 = document.getElementById("myChart_" + divId);
+      var myChart = new Chart(ctx13, {
+        type: "doughnut",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
         },
-      },
-    });
+        options: {},
+      });
+    }
     return false;
   }.bind(this);
 
   $("#add-new-widget").click(this.addNewWidget);
 })();
+
+var ctx = document.getElementById("myChart_123");
+var myChart = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {},
+});
